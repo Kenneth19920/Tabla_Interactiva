@@ -1,0 +1,63 @@
+﻿@model G5_caso1.Models.EMPLEADO
+
+@{
+    ViewBag.Title = "Detalle";
+    Layout = "~/Views/Shared/MiLayout.cshtml";
+}
+
+<h1><span class="blue">&lt;</span>Detalle<span class="blue">&gt;</span> <span class="yellow">Empleado</span></h1>
+<h2>Caso #1 para progracion avanzada</h2>
+
+
+<div>
+
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NOMBRE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NOMBRE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.APELLIDO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.APELLIDO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EDAD)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EDAD)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SALARIO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SALARIO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.ID_EMPLEADO }, new { @class = "btn btn-outline-success" }) 
+    @Html.ActionLink("Regresar", "Index", new { }, new { @class = "btn btn-outline-success" })
+</p>
+
+

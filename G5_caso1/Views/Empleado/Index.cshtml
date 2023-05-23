@@ -1,0 +1,56 @@
+﻿@model IEnumerable<G5_caso1.Models.EMPLEADO>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/MiLayout.cshtml";
+}
+
+<h1><span class="blue">&lt;</span>Table<span class="blue">&gt;</span> <span class="yellow">Empleados</span></h1>
+<h2>Caso #1 para programación avanzada</h2>
+
+<p>
+
+    @Html.ActionLink("Agregar", "Guardar", new { }, new { @class = "btn btn-outline-success btn-lg" })
+</p>
+
+<table class="container">
+    <thead>
+        <tr>
+            <th><h1>Nombre</h1></th>
+            <th><h1>Apellido</h1></th>
+            <th><h1>Edad</h1></th>
+            <th><h1>Salario</h1></th>
+            <th><h1>Email</h1></th>
+
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NOMBRE)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.APELLIDO)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EDAD)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SALARIO)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+
+                <td>
+                    @Html.ActionLink("Editar", "Modificar", new { id = item.ID_EMPLEADO }, new { @class = "btn btn-outline-success btn-sm" })
+                    @Html.ActionLink("Detalles", "Detalle", new { id = item.ID_EMPLEADO }, new { @class = "btn btn-outline-success btn-sm" })
+                    @Html.ActionLink("Eliminar", "Eliminar", new { id = item.ID_EMPLEADO }, new { @class = "btn btn-outline-danger btn-sm" })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
